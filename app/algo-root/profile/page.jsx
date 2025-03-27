@@ -1,4 +1,4 @@
-import UserProfile from "@/components/basic/UserProfile";
+import UserProfile from "@/components/auth/UserProfile";
 import { Suspense } from "react";
 
 const UserProfilePage=()=>{

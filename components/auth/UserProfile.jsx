@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { User, ArrowLeft, MapPin, Phone, Mail, Building2, Globe, LocateFixed } from 'lucide-react';
-import AnimatedGridContainer from './GridBackground';
+import AnimatedGridContainer from '../basic/GridBackground';
+
 
 
 const UserProfile=()=>{
