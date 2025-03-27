@@ -7,7 +7,7 @@ const AuthContext=createContext();
 export const AuthProvider=({children})=>{
   const [user,setUser]=useState(null);
 
-  // Initialize user from local storage
+  
   useEffect(()=>{
     const storedUser=localStorage.getItem('Session');
     if(storedUser)
@@ -29,12 +29,12 @@ export const AuthProvider=({children})=>{
   };
 
   const validatePassword = (password) => {
-    // At least 8 characters, one uppercase, one lowercase, one number
+    
     const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     return re.test(password);
   };
 
-  //Mock signup function - in a real app, this would call an API
+ 
   const signup=async(name,email,password)=>{   
       try{
           
@@ -69,15 +69,13 @@ export const AuthProvider=({children})=>{
             return false;
           }
           
-          //Create new user
           const newUser={
             id:crypto.randomUUID(),
             name:name.trim(),
             email:email,
-            password:password // In a real app, NEVER store plain text passwords
+            password:password 
           };
           
-          // Store in "database"
           localStorage.setItem('users',JSON.stringify([...users,newUser]));
           toast.success('Account created successfully');
          console.log("User Database in local storage and session user Try:",{Users:JSON.parse(localStorage.getItem("users")),session:user});
@@ -92,7 +90,6 @@ export const AuthProvider=({children})=>{
       } 
     };
 
-  // Mock login function
   const login =async(email,password)=>{    
 
     if (!email || !password) {
@@ -100,20 +97,19 @@ export const AuthProvider=({children})=>{
       return false;
     }
 
-    // Email format validation
+   
     if (!validateEmail(email)) {
       toast.error('Please enter a valid email address');
       return false;
     }
 
-    // Password validation
+    
     if (!validatePassword(password)) {
       toast.error('Password must be at least 8 characters long, contain uppercase, lowercase, and a number');
       return false;
     }
 
       try {
-        // Look up user
         const usersData=JSON.parse(localStorage.getItem('users')|| '[]');
         const user=usersData.find(i=>i.email===email && i.password===password);
         
@@ -123,7 +119,7 @@ export const AuthProvider=({children})=>{
           return false;
         }
       
-        // Create session
+        
         const sessionUser={id:user.id,name:user.name,email:user.email};
         localStorage.setItem('Session',JSON.stringify(sessionUser));
         setUser(sessionUser);
@@ -140,14 +136,13 @@ export const AuthProvider=({children})=>{
       }
   };
 
-  // Logout function
   const signout=()=>{
     localStorage.removeItem('Session');
     setUser(null);
     toast.success('Logged out successfully');
   };
 
-  // Delete account function
+  
   const deleteAccount=()=>{
       if(!user)
         return;

@@ -44,7 +44,7 @@ const Sidebar=()=>{
       >
 
         <div className="flex items-center justify-between h-16 px-4  border-b border-neutral-200 dark:border-neutral-800">
-          <div className="text-xl text-base font-semibold text-neutral-800 dark:text-neutral-200">
+          <div className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
             Navigation Control
           </div>
 

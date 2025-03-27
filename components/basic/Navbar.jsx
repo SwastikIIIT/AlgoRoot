@@ -28,7 +28,7 @@ const Navbar = () => {
         <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-neutral-200 dark:border-neutral-800
             ${isScrolled?'bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md shadow-sm':'bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm'}`}
         >
-            <div className="w-full px-4 md:px-6 flex items-center w-full  justify-between h-16">
+            <div className="w-full px-4 md:px-6 flex items-center justify-between h-16">
             
               <Link href='/algo-root'>
                 <div className="flex items-center space-x-3">
