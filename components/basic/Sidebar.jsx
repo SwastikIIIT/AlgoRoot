@@ -6,14 +6,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const Sidebar=()=>{
-  const [isOpen, setIsOpen]=useState(true);
+  const [isOpen,setIsOpen]=useState(true);
   const pathname=usePathname();
   
   const toggleSidebar=()=>{
     setIsOpen(!isOpen);
   };
   
-  const items = [
+  const items=[
     { 
       name:'Details',
       icon: LayoutGrid,
@@ -37,12 +37,10 @@ const Sidebar=()=>{
         >
         {isOpen?<X size={18}/>:<Menu size={18}/>}
       </Button>
-      
     
       <aside className={`mt-16 fixed inset-y-0 left-0 z-40 w-58  bg-white dark:bg-neutral-900 border-r border-neutral-200 dark:border-neutral-800 
           transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
       >
-
         <div className="flex items-center justify-between h-16 px-4  border-b border-neutral-200 dark:border-neutral-800">
           <div className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
             Navigation Control
@@ -60,7 +58,7 @@ const Sidebar=()=>{
         
         
         <div className="flex-1 overflow-y-auto py-6 px-3">
-          <nav className="space-y-1">
+          <div className="space-y-1">
             {items.map((item) => (
               <Link
                 key={item.name}
@@ -84,7 +82,7 @@ const Sidebar=()=>{
                 />
               </Link>
             ))}
-          </nav>
+          </div>
         </div>
         
         <div className="p-4  border-t border-neutral-200 dark:border-neutral-800">
@@ -99,7 +97,7 @@ const Sidebar=()=>{
       
       {isOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black/50 transition-opacity md:hidden"
+          className="fixed inset-0 z-30 bg-black/50 transition-opacity md:hidden "
           onClick={toggleSidebar}
         />
       )}

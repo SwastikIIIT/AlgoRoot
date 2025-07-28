@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 
 const LoginForm=()=>{
-   const {login,user}=AuthOptions();
+   const {login}=AuthOptions();
    const router=useRouter();
 
    const handleLogin=async(formData)=>{
@@ -21,7 +21,6 @@ const LoginForm=()=>{
         try
         {
                 const result=await login(email,password);
-        
                 if(result){
                     router.push(`/algo-root/details`);
                 }
@@ -55,7 +54,7 @@ const LoginForm=()=>{
               
               <div className="grid gap-3">
                 <Label htmlFor="email">Email</Label>
-                <Input name="email" type="email" placeholder="john@example.com" required />
+                <Input name="email" type="email" placeholder="swastik@example.com" required />
               </div>
 
               <div className="grid gap-3">
