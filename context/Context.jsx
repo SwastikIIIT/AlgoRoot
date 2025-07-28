@@ -78,7 +78,7 @@ export const AuthProvider=({children})=>{
           
           localStorage.setItem('users',JSON.stringify([...users,newUser]));
           toast.success('Account created successfully');
-         console.log("User Database in local storage and session user Try:",{Users:JSON.parse(localStorage.getItem("users")),session:user});
+          console.log("User Database in local storage and session user Try:",{Users:JSON.parse(localStorage.getItem("users")),session:user});
           return true;
       }
       catch(err)

@@ -12,7 +12,7 @@ const AlgoRootLayout = ({children}) => {
               <main  className="flex-1 mt-16 md:ml-64 transition-all duration-300">
                 {children}
               </main>
-              <Footer/>
+
             </div>
           </div>
   )

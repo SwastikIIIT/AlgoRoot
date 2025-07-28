@@ -133,7 +133,7 @@ const Details=()=>{
         </CardHeader>
       
         <CardContent>
-          <div className="flex items-center py-4 pb-6">
+          <div className="flex items-center py-4 pb-6 ">
             <div className="relative w-full max-w-md mx-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <Input
@@ -209,7 +209,7 @@ const Details=()=>{
                     <Avatar className="w-11 h-11 border-2 border-blue-500">
                       <AvatarImage src={user.avatar} alt={user.name} />
                       <AvatarFallback>
-                        <User className="w-6 h-6" />
+                        <User className="w-11 h-11"/>
                       </AvatarFallback>
                     </Avatar>
                   </TableCell>
@@ -246,7 +246,6 @@ const Details=()=>{
             </TableBody>
           </Table>
 
-          {/* Pagination */}
           <div className="flex justify-center items-center mt-6">
             <Pagination>
               <PaginationContent>
